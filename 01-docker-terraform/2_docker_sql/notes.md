@@ -14,9 +14,10 @@ services:
       retries: 10
     restart: always
 
-pgcli -h localhost -u root -p 5432 -d ny_taxi
+# 1.2 ingesting taxi data to postgres using jupyter NB
 
-URL="https://dezoomcamp.s3.us-east-1.amazonaws.com/yellow_tripdata_2021-01.csv"
+
+pgcli -h localhost -u root -p 5432 -d ny_taxi
 
 # how to run postgres13 image using docker,
 # e > environment variables, 
