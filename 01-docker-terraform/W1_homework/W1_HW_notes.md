@@ -27,3 +27,7 @@ python W1_HW_ingest_data.py \
     --db=homework_taxi \
     --table_name=green_tripdata_2019-10 \
     --url="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz"
+
+# using PGCLI
+
+pgcli -h localhost -u postgres -p 5433 -d ny_taxi
