@@ -1,14 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 # W1 HW ingest data python script used by Aditya Kalmegh (originally developed as a part of DE Zoomcamp course)
-
 import os
-import pandas as pd
 import argparse
-from sqlalchemy import create_engine
-import requests
-import gzip
-import shutil
 
 from time import time
 
@@ -34,28 +28,30 @@ def main(params):
 
     os.system(f"wget {url} -O {csv_name}")
 
-    # Connect to PostgreSQL database
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
-    df_iter = pd.read_csv('output.csv', iterator=True, chunksize=100000)
 
-    # Process the first chunk
+    df_iter = pd.read_csv(csv_name, iterator=True, chunksize=100000)
+
     df = next(df_iter)
+
     df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
     df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
 
-    # Insert the data into the database
     df.head(n=0).to_sql(name=table_name, con=engine, if_exists='replace')
+
     df.to_sql(name=table_name, con=engine, if_exists='append')
 
-    # Process the rest of the chunks
+
     while True: 
 
         try:
             t_start = time()
             
             df = next(df_iter)
+
             df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
             df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
+
             df.to_sql(name=table_name, con=engine, if_exists='append')
 
             t_end = time()
