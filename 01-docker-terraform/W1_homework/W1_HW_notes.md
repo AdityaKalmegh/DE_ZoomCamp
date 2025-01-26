@@ -18,5 +18,12 @@ docker run -it \
   -p 5432:5432 \
   postgres:13
 
-# taxi dataset location on DTC github
-https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz
+
+python W1_HW_ingest_data.py \
+    --user=root2 \
+    --password=root2 \
+    --host=localhost \
+    --port=5433 \
+    --db=homework_taxi \
+    --table_name=green_tripdata_2019-10 \
+    --url="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz"
