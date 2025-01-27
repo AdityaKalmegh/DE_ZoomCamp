@@ -12,7 +12,7 @@ services:
     environment:
       POSTGRES_DB: kestra
       POSTGRES_USER: kestra
-      POSTGRES_PASSWORD: kestra
+      POSTGRES_PASSWORD: k3str4
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
       interval: 30s
@@ -35,7 +35,7 @@ services:
             url: jdbc:postgresql://postgres:5432/kestra
             driverClassName: org.postgresql.Driver
             username: kestra
-            password: kestra
+            password: k3str4
         kestra:
           server:
             basicAuth:
@@ -60,23 +60,3 @@ services:
     depends_on:
       postgres:
         condition: service_started
-
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD=root
-    user: "5050:5050"
-    volumes:
-      - "./pgadmin-data:/var/lib/pgadmin"
-      - "./pgpassfile:/pgadmin4/pgpassfile"
-      - "./servers.json:/pgadmin4/servers.json"
-    ports:
-      - "8090:80"
-    entrypoint: >
-      bash -c "mkdir -p /var/lib/pgadmin/sessions &&
-               chown -R 5050:5050 /var/lib/pgadmin &&
-               chmod -R 700 /var/lib/pgadmin &&
-               exec /entrypoint.sh"
-    depends_on:
-      - postgres
