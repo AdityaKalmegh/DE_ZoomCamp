@@ -18,6 +18,8 @@ services:
       interval: 30s
       timeout: 10s
       retries: 10
+    expose:
+      - "5432"  #exposing 5432 port to be able to connect to the database from the host machine
     extra_hosts:
       - "host.docker.internal:host-gateway" # adding this to resolve Kestra error "org.postgresql.util.PSQLException: The connection attempt failed."
 
