@@ -31,7 +31,7 @@ Answer: 128.3 MB as per above screenshot
 - `green_tripdata_04_2020.csv`
 - `green_tripdata_2020.csv`
 
-Answer: `{{inputs.taxi}}_tripdata_{{inputs.year}}-{{inputs.month}}.csv` > `green_tripdata_2020-04.csv' 
+Answer:  `green_tripdata_2020-04.csv' 
 
 3) How many rows are there for the `Yellow` Taxi data for the year 2020?
 - 13,537.299
@@ -39,11 +39,17 @@ Answer: `{{inputs.taxi}}_tripdata_{{inputs.year}}-{{inputs.month}}.csv` > `green
 - 18,324,219
 - 29,430,127
 
+Answer: 24,648,499
+![alt text](image-2.png)
+
 4) How many rows are there for the `Green` Taxi data for the year 2020?
 - 5,327,301
 - 936,199
 - 1,734,051
 - 1,342,034
+
+Answer: 1,724,051
+![alt text](image-3.png)
 
 5) How many rows are there for the `Yellow` Taxi data for March 2021?
 - 1,428,092
@@ -51,12 +57,16 @@ Answer: `{{inputs.taxi}}_tripdata_{{inputs.year}}-{{inputs.month}}.csv` > `green
 - 1,925,152
 - 2,561,031
 
+Answer: 1,925,152
+![alt text](image-4.png)
+
 6) How would you configure the timezone to New York in a Schedule trigger?
 - Add a `timezone` property set to `EST` in the `Schedule` trigger configuration  
 - Add a `timezone` property set to `America/New_York` in the `Schedule` trigger configuration
 - Add a `timezone` property set to `UTC-5` in the `Schedule` trigger configuration
 - Add a `location` property set to `New_York` in the `Schedule` trigger configuration  
 
+ANSWER: Add a `timezone` property set to `America/New_York` in the `Schedule` trigger configuration
 
 ## Submitting the solutions
 
