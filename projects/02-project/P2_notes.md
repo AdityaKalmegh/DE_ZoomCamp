@@ -17,19 +17,19 @@ https://amazon-reviews-2023.github.io/
 
 ## Steps 
 
-1. Describe dataset, define problem statement - 
+# 1. Describe dataset, define problem statement - 
     Selecting a dataset of interest (see Datasets)
     Creating a pipeline for processing this dataset and putting it to a datalake
     Creating a pipeline for moving the data from the lake to a data warehouse
     Transforming the data in the data warehouse: prepare it for the dashboard
     Building a dashboard to visualize the data
 
-2.The pipeline could be stream or batch: this is the first thing you'll need to decide
+# 2.The pipeline could be stream or batch: this is the first thing you'll need to decide
 
     Stream: If you want to consume data in real-time and put them to data lake
     Batch: If you want to run things periodically (e.g. hourly/daily)
 
-3. You don't have to limit yourself to technologies covered in the course. You can use alternatives as well:
+# 3. You don't have to limit yourself to technologies covered in the course. You can use alternatives as well:
 
     Cloud: AWS, GCP, Azure, ...
     Infrastructure as code (IaC): Terraform, Pulumi, Cloud Formation, ...
@@ -38,7 +38,7 @@ https://amazon-reviews-2023.github.io/
     Batch processing: Spark, Flink, AWS Batch, ...
     Stream processing: Kafka, Pulsar, Kinesis, ...
 
-4. 
+# 4. 
     Problem description
         0 points: Problem is not described
         2 points: Problem is described but shortly or not clearly
@@ -73,7 +73,7 @@ https://amazon-reviews-2023.github.io/
         2 points: Some instructions are there, but they are not complete
         4 points: Instructions are clear, it's easy to run the code, and the code works
 
-5. 
+# 5. 
 
 implementing following could significantly enhance the quality of your project:
 
